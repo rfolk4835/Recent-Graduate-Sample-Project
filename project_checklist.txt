@@ -1,0 +1,22 @@
+Required 
+- C# based Azure Function
+- Accepts/parses JSON file data_model.txt
+- Should expand to support larger payloads
+- Create error handling as needed
+- Determine duplicate data via isbn number, remove duplicates
+- Return response JSON with no duplicate version
+- Make Unit Tests for various error conditions
+
+Optional
+- Demonstration of working fuction via a REST client
+- Fuction deployed on Azure Cloud
+- Same demonstration on Azure Cloud
+- Include metadata in the return function
+
+Notes
+- Parce data_model
+- Find duplicates, remove them
+- Return new JSON txt file (with metadata)
+- Test 
+- REST client and Azure Cloud if time 
+- (Show sites used, videos found, and code examples used in doc)
