@@ -2,6 +2,9 @@
 
 namespace JSONparcer {
     public class BookList {
+        public List<Book> list { get; set; }
+    }
+    public class Book {
         public string isbn { get; set; }
         public string title { get; set; }
         public string subtitle { get; set; }
@@ -16,9 +19,11 @@ namespace JSONparcer {
         public static void Main(string[] args) {
             string fileName = "data/data_model.json";
             string jsonString = File.ReadAllText(fileName);
-            BookList books = JsonSerializer.Deserialize<BookList>(jsonString);
+            BookList books = new JsonSerializer().Deserialize<BookList>(jsonString);
 
-            Console.WriteLine($"isbn : {books.isbn}");
+            foreach( var item in books.list) {
+                Console.WriteLine("isbn: {0}", item.isbn);
+            }
         }
     }
 }
