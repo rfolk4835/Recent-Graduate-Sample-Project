@@ -21,9 +21,11 @@ namespace JSONparcer {
             string jsonString = File.ReadAllText(fileName);
             BookList books = JsonSerializer.Deserialize<BookList>(jsonString);
 
-            foreach( var item in books.list) {
-                Console.WriteLine("isbn: {0}", item.isbn);
-            }
+            List<Book> withDupes = books.list;
+            List<Book> noDupes = withDupes.Distinct().ToList();
+            string newJsonString = JsonSerializer.Serialize(noDupes);
+            string newFileName = "data/data_model_noDupes.json";
+            File.WriteAllText(newFileName, newJsonString);
         }
     }
 }
