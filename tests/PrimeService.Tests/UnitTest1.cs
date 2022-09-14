@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Prime.Services;
+//using Prime.Services;
 
 namespace PrimeService.Tests;
 

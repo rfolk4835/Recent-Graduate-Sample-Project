@@ -13,7 +13,7 @@ namespace JSONparcer {
         public string website { get; set; }
     }
     public class BookList {
-        public List<Book>? list { get; set; }
+        public List<Book>? books { get; set; }
     }
     public class parcer {
         public static void Main(string[] args) {
@@ -21,7 +21,7 @@ namespace JSONparcer {
             string jsonString = File.ReadAllText(fileName);
             BookList books = JsonSerializer.Deserialize<BookList>(jsonString);
 
-            List<Book> withDupes = books.list;
+            List<Book> withDupes = books.books;
             List<Book> noDupes = withDupes.Distinct().ToList();
             string newJsonString = JsonSerializer.Serialize(noDupes);
             string newFileName = "data/data_model_noDupes.json";
